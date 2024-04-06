@@ -36,19 +36,15 @@ function Navbar({className}:{className?:string}) {
         </h1>
 
      <div className='flex items-center gap-5'>
-        {Socials.map((social,index)=> {
-                  
-                  const Icon = social.Icon
+        {Socials.map((social, index) => {
+          const Icon = social.Icon;
 
-
-                    return <Link href={social.url} 
-                    key={index} 
-                    aria-label={social.label}>
-
-                      <Icon className='w-5 h-5 hover:scale-125 transition-all'/>
- 
-                    </Link>
-                })}
+          return (
+            <Link href={social.url} key={index} aria-label={social.name}>
+              <Icon className="w-5 h-5 hover:scale-125 transition-all" />
+            </Link>
+          );
+        })}
      </div>
     </nav>
   )
